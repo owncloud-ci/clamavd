@@ -10,5 +10,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Maintainers
 
-[Phil Davis](https://github.com/phil-davis)
+[Phil Davis](https://github.com/phil-davis)\
 [Robert Kaussow](https://github.com/xoxys/)
