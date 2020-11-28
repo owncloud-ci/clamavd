@@ -7,8 +7,3 @@ ClamAV image for CI pipelines.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Maintainers
-
-[Phil Davis](https://github.com/phil-davis)\
-[Robert Kaussow](https://github.com/xoxys/)
