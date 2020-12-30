@@ -17,6 +17,6 @@ EXPOSE 3310
 
 RUN cd ../
 
-ADD run.sh /
+ADD run.sh /latest/
 
 CMD ["/run.sh"]
