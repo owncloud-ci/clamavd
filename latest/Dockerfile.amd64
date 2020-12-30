@@ -13,10 +13,10 @@ RUN echo "Foreground true" >> /etc/clamav/clamd.conf && \
     echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
     echo "Foreground true" >> /etc/clamav/freshclam.conf
 
-EXPOSE 3310
-
 RUN cd ../
 
 ADD run.sh /latest/
+
+EXPOSE 3310
 
 CMD ["/run.sh"]
