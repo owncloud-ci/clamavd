@@ -1,4 +1,11 @@
-FROM alpine:3.12.0
+FROM alpine:3.12
+
+LABEL maintainer="ownCloud DevOps <devops@owncloud.com>"
+LABEL org.opencontainers.image.authors="ownCloud DevOps <devops@owncloud.com>"
+LABEL org.opencontainers.image.title="ownCloud CI ClamAV"
+LABEL org.opencontainers.image.url="https://github.com/owncloud-ci/clamavd"
+LABEL org.opencontainers.image.source="https://github.com/owncloud-ci/clamavd"
+LABEL org.opencontainers.image.documentation="https://github.com/owncloud-ci/clamavd"
 
 RUN apk add --update bash clamav clamav-libunrar && \
     rm -fr /var/cache/apk/*
