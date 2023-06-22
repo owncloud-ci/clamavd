@@ -5,6 +5,7 @@ def main(ctx):
 
   arches = [
     'amd64',
+    'arm64v8',
   ]
 
   config = {
