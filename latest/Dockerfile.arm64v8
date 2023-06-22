@@ -1,0 +1,27 @@
+FROM alpine:3.18
+
+LABEL maintainer="ownCloud DevOps <devops@owncloud.com>"
+LABEL org.opencontainers.image.authors="ownCloud DevOps <devops@owncloud.com>"
+LABEL org.opencontainers.image.title="ownCloud CI ClamAV"
+LABEL org.opencontainers.image.url="https://github.com/owncloud-ci/clamavd"
+LABEL org.opencontainers.image.source="https://github.com/owncloud-ci/clamavd"
+LABEL org.opencontainers.image.documentation="https://github.com/owncloud-ci/clamavd"
+
+RUN apk add --update bash clamav clamav-libunrar && \
+    rm -fr /var/cache/apk/*
+
+RUN mkdir /run/clamav && \
+    chown clamav:clamav /run/clamav && \
+    chmod 750 /run/clamav
+
+RUN freshclam
+
+RUN echo "Foreground true" >> /etc/clamav/clamd.conf && \
+    echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
+    echo "Foreground true" >> /etc/clamav/freshclam.conf
+
+EXPOSE 3310
+
+ADD run.sh /
+
+CMD ["/run.sh"]
